@@ -1,0 +1,29 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="40" cy="40" r="38" fill="#007bff" stroke="#0056b3" stroke-width="2"/>
+  
+  <!-- Inner Circle -->
+  <circle cx="40" cy="40" r="32" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Certificate/Document Icon -->
+  <rect x="24" y="20" width="32" height="40" rx="3" fill="#ffffff" stroke="#0056b3" stroke-width="1"/>
+  
+  <!-- Document Lines -->
+  <line x1="28" y1="28" x2="52" y2="28" stroke="#007bff" stroke-width="1"/>
+  <line x1="28" y1="34" x2="52" y2="34" stroke="#007bff" stroke-width="1"/>
+  <line x1="28" y1="40" x2="48" y2="40" stroke="#007bff" stroke-width="1"/>
+  <line x1="28" y1="46" x2="50" y2="46" stroke="#007bff" stroke-width="1"/>
+  
+  <!-- Verification Checkmark -->
+  <path d="M 34 48 L 38 52 L 46 44" stroke="#28a745" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Shield Element -->
+  <path d="M 40 12 L 48 16 L 48 24 L 40 28 L 32 24 L 32 16 Z" fill="#ffffff" stroke="#0056b3" stroke-width="1"/>
+  
+  <!-- Shield Inner Design -->
+  <circle cx="40" cy="20" r="3" fill="#007bff"/>
+  <path d="M 38 20 L 39 21 L 42 18" stroke="#ffffff" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Government Star -->
+  <path d="M 40 64 L 42 68 L 46 68 L 43 71 L 44 75 L 40 73 L 36 75 L 37 71 L 34 68 L 38 68 Z" fill="#ffffff" opacity="0.9"/>
+</svg>

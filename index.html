@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Validator - Government of Jharkhand</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Page Content -->
+    <div id="main-page">
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="certificate-validator-logo.svg" alt="Certificate Validator Logo">
+                    <span>Certificate Validator</span>
+                </div>
+                <ul>
+                    <li><a href="#" onclick="showMainPage()">Home</a></li>
+                    <li><a href="#" onclick="showAdminLogin()">Admin</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="hero-section">
+            <div class="content">
+                <h1>Verify Academic Credentials Instantly</h1>
+                <p>Powered by Blockchain & AI for Trustworthy Verification. Secure authentic academic certificates with cutting-edge technology.</p>
+                <div class="actions">
+                    <button onclick="document.getElementById('file-input').click()">Verify Certificate</button>
+                    <input type="file" id="file-input" style="display:none;" onchange="handleFileChange(event)">
+                    <button onclick="showHowItWorks()">Learn How It Works</button>
+                </div>
+                <div id="verification-result"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Admin Login Page Content -->
+    <div id="admin-page" style="display: none;">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="logo-circle">
+                    <img src="admin-logo.svg" alt="Admin Logo">
+                </div>
+                <h2>Admin Login</h2>
+                <p>Certificate Validator - Government of Jharkhand</p>
+                <form id="login-form" action="/admin_login" method="post">
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <button type="submit">Sign In</button>
+                    <div id="login-message"></div>
+                    <p class="demo-creds">Demo credentials: admin@jharkhand.gov.in / admin123</p>
+                </form>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="#" onclick="showMainPage()" style="color: #007bff; text-decoration: none;">← Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Page navigation functions
+        function showMainPage() {
+            document.getElementById('main-page').style.display = 'block';
+            document.getElementById('admin-page').style.display = 'none';
+            document.title = 'Certificate Validator - Government of Jharkhand';
+        }
+
+        function showAdminLogin() {
+            document.getElementById('main-page').style.display = 'none';
+            document.getElementById('admin-page').style.display = 'block';
+            document.title = 'Admin Login - Government of Jharkhand';
+        }
+
+        // Handle file upload for certificate verification
+        function handleFileChange(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            fetch('/api/verify', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('verification-result');
+                resultDiv.style.display = 'block';
+                resultDiv.className = data.status.toLowerCase();
+                resultDiv.innerHTML = `
+                    <strong>${data.status}</strong><br>
+                    ${data.message}
+                    ${data.details ? `<br><br><strong>Details:</strong><br>
+                    Student: ${data.details.student_name}<br>
+                    Roll Number: ${data.details.roll_number}<br>
+                    Institution: ${data.details.institution_id}` : ''}
+                `;
+            })
+            .catch(error => {
+                const resultDiv = document.getElementById('verification-result');
+                resultDiv.style.display = 'block';
+                resultDiv.className = 'error';
+                resultDiv.innerHTML = `<strong>Error:</strong><br>Failed to verify certificate. Please try again.`;
+            });
+        }
+
+        // Show how it works information
+        function showHowItWorks() {
+            alert(`How Certificate Validation Works:
+
+1. Upload Certificate: Upload your academic certificate image
+2. OCR Processing: Our AI extracts text from the certificate
+3. Database Lookup: We search our secure database for matching records
+4. Hash Verification: We verify the certificate hasn't been tampered with
+5. Result: You get instant verification of authenticity
+
+This system uses blockchain technology and AI to ensure secure, trustworthy verification of academic credentials.`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#007bff" stroke="#0056b3" stroke-width="4"/>
+  
+  <!-- Inner Circle -->
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Certificate/Document Icon -->
+  <rect x="60" y="50" width="80" height="100" rx="8" fill="#ffffff" stroke="#0056b3" stroke-width="2"/>
+  
+  <!-- Document Lines -->
+  <line x1="70" y1="70" x2="130" y2="70" stroke="#007bff" stroke-width="2"/>
+  <line x1="70" y1="85" x2="130" y2="85" stroke="#007bff" stroke-width="2"/>
+  <line x1="70" y1="100" x2="120" y2="100" stroke="#007bff" stroke-width="2"/>
+  <line x1="70" y1="115" x2="125" y2="115" stroke="#007bff" stroke-width="2"/>
+  
+  <!-- Verification Checkmark -->
+  <path d="M 85 120 L 95 130 L 115 110" stroke="#28a745" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Shield Element -->
+  <path d="M 100 30 L 120 40 L 120 60 L 100 70 L 80 60 L 80 40 Z" fill="#ffffff" stroke="#0056b3" stroke-width="2"/>
+  
+  <!-- Shield Inner Design -->
+  <circle cx="100" cy="50" r="8" fill="#007bff"/>
+  <path d="M 95 50 L 98 53 L 105 46" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Blockchain/Chain Elements -->
+  <circle cx="50" cy="140" r="6" fill="#ffffff" opacity="0.8"/>
+  <circle cx="65" cy="140" r="6" fill="#ffffff" opacity="0.8"/>
+  <circle cx="80" cy="140" r="6" fill="#ffffff" opacity="0.8"/>
+  <line x1="56" y1="140" x2="59" y2="140" stroke="#ffffff" stroke-width="2"/>
+  <line x1="71" y1="140" x2="74" y2="140" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Government Star -->
+  <path d="M 100 160 L 105 170 L 115 170 L 107 177 L 110 187 L 100 182 L 90 187 L 93 177 L 85 170 L 95 170 Z" fill="#ffffff" opacity="0.9"/>
+</svg>

@@ -1,0 +1,8 @@
+Flask
+pymongo
+python-dotenv
+easyocr
+Flask-Login
+werkzeug
+gunicorn
+Flask-Admin
